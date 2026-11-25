@@ -1,3 +1,13 @@
+---
+title: Hybrid Recommendation Engine
+emoji: 🎯
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+app_file: app.py
+pinned: false
+---
+
 # Hybrid Recommendation System
 
 An end-to-end machine learning recommendation platform combining **Content-Based Filtering (TF-IDF)**, **Bayesian Personalized Ranking (BPR) Collaborative Filtering**, **Popularity Ranking**, and **Cold-Start Handling**, served via **FastAPI** and an interactive **Streamlit** dashboard.
