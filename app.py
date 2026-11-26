@@ -1,6 +1,13 @@
 import gradio as gr
 import pandas as pd
 
+try:
+    import spaces
+    gpu_decorator = spaces.GPU
+except ImportError:
+    def gpu_decorator(fn):
+        return fn
+
 from src.inference.recommender import Recommender
 
 # Load unified recommender once at startup
@@ -25,6 +32,7 @@ STRATEGY_DESCRIPTIONS = {
 }
 
 
+@gpu_decorator
 def get_recommendations(user_id: int, k: int, mode: str, exclude_str: str):
     if user_id is None or user_id < 0:
         return "Please enter a valid non-negative User ID.", pd.DataFrame(columns=["Rank", "Item ID"])
