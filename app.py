@@ -68,7 +68,7 @@ def get_recommendations(user_id: int, k: int, mode: str, exclude_str: str):
     return status_md, df
 
 
-with gr.Blocks(title="Hybrid Recommendation Engine", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="Hybrid Recommendation Engine") as demo:
     gr.Markdown(
         "# 🎯 Hybrid Recommendation Engine\n"
         "Personalized recommendations powered by **Content-Based Filtering (TF-IDF)**, "
@@ -116,4 +116,4 @@ with gr.Blocks(title="Hybrid Recommendation Engine", theme=gr.themes.Soft()) as 
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(theme=gr.themes.Soft())
